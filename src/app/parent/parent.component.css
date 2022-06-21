@@ -1,0 +1,12 @@
+div{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(216, 183, 246);
+    width: 500px;
+    height: 400px;
+    margin: 2em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    border: 5px solid rgb(168, 85, 247);
+}
