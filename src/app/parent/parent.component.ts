@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ContentChild, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { red } from 'colors';
 
 @Component({
   selector: 'app-parent',
@@ -6,13 +7,15 @@ import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
- 
+//  @ViewChild('app-child',{static:true}) viewChildSelector;
+//  @ContentChild('app-child',{static:true}) contentChildSelector;
+
   apples:any=[];
   constructor() { 
     console.log("1.Constructor Called 🍾🍾🍾");
   }
 
-  ngOnChanges(){  
+  ngOnChanges(){
     console.log("2.OnChanges Called 🥂🥂🥂");
   }
 
@@ -25,12 +28,21 @@ export class ParentComponent implements OnInit {
     console.log("4.DoCheck Called ✅✅✅");
   }
 
-  ngContentInit(){
-    console.log("5.ContentInit Called 🎛️🎛️🎛️");
+  ngAfterContentInit(){
+    console.log("5.AfterContentInit Called 🎛️🎛️🎛️");
   }
-
+  ngAfterContentChecked(){
+    console.log("%c 5.1.AfterContentChecked Called 🎛️🎛️✅",'background: white; color: green');
+  }
   ngAfterViewInit(){
     console.log("6.AfterViewInit Called 🕑🕑🕑");
  }
+ ngAfterViewChecked(){
+  console.log("%c 6.1.AfterViewChecked Called 🕑🕑✅",'background: white; color: green');
+}
 
+ngOnDestroy(){
+  console.log("%c 7onDestroy Called 💥💥💥",'background: white; color: red');
+
+}
 }
