@@ -1,5 +1,4 @@
 import { Component, ContentChild, OnInit, ViewChild, ViewChildren } from '@angular/core';
-import { red } from 'colors';
 
 @Component({
   selector: 'app-parent',
