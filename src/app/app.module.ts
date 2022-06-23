@@ -9,13 +9,15 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorService } from './service/http-interceptor.service';
 import { YouTubeTagerPipe } from './utils/you-tube-tager.pipe';
+import { HilighterDirective } from './utils/hilighter.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ParentComponent,
     ChildComponent,
-    YouTubeTagerPipe
+    YouTubeTagerPipe,
+    HilighterDirective
   ],
   imports: [
     BrowserModule,
