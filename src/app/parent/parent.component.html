@@ -1,4 +1,13 @@
 <div>
 <h1 #h1> Parent Component have 🍎  </h1>
+    <button (click)="actionHandler()"> Get Colors</button>
     <a routerLink="/child">Destroy Component</a>
 </div>
+<span style="display: flex;flex-wrap:wrap">
+
+    <ng-Template *ngFor="let color of colors">
+        <div class="colorPalet" [ngStyle]="{'background-image': 1==1 ? 'linear-gradient('+ color.colors[0] + ',' + color.colors[1] +')' : 'blue'}">
+            {{color.name}}
+        </div>
+    </ng-Template>
+</span>

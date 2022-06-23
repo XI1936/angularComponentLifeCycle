@@ -4,9 +4,16 @@ div{
     background-color: rgb(216, 183, 246);
     width: 500px;
     height: 400px;
-    margin: 2em;
+    margin: 1em;
     justify-content: center;
     align-items: center;
     border-radius: 1em;
     border: 5px solid rgb(168, 85, 247);
+}
+
+.colorPalet{
+    width: 10em;
+    height: 5em;
+    border-radius: 2em;
+    border: 2px solid transparent;
 }

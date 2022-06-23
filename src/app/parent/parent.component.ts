@@ -1,4 +1,5 @@
 import { Component, ContentChild, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { GlobalService } from '../service/global.service';
 
 @Component({
   selector: 'app-parent',
@@ -10,7 +11,8 @@ export class ParentComponent implements OnInit {
 //  @ContentChild('app-child',{static:true}) contentChildSelector;
 
   apples:any=[];
-  constructor() { 
+  colors:any=[];
+  constructor(private appService:GlobalService) { 
     console.log("1.Constructor Called 🍾🍾🍾");
   }
 
@@ -38,6 +40,15 @@ export class ParentComponent implements OnInit {
  }
  ngAfterViewChecked(){
   console.log("%c 6.1.AfterViewChecked Called 🕑🕑✅",'background: white; color: green');
+}
+
+actionHandler(){
+this.appService.getUsers().subscribe(
+  (response)=>{
+    console.log(response);
+    this.colors=response;
+  }
+)
 }
 
 ngOnDestroy(){
